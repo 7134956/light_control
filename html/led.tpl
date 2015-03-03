@@ -14,13 +14,6 @@ function f_send(_form) {
 _form.submit();
 }
 </script>
-<p>
-<input type="submit" name="led" value="0">
-<input type="submit" name="led" value="1">
-<input type="submit" name="led" value="4">
-<input type="submit" name="led" value="16">
-<input type="submit" name="led" value="1023">
-</p>
 </form>
 </div>
 </body></html>
