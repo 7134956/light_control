@@ -24,9 +24,9 @@ flash as a binary. Also handles the hit counter on the main page.
 #include "espmissingincludes.h"
 #include "stdlib.h"
 #include "user_pwm.h"
+#include "save_params.h"
 
-//cause I can't be bothered to write an ioGetLed()
-static int currLedState=0;
+int currLedState=0;
 
 //Cgi that turns the LED on or off according to the 'led' param in the POST data
 int ICACHE_FLASH_ATTR cgiLed(HttpdConnData *connData) {
@@ -45,6 +45,8 @@ int ICACHE_FLASH_ATTR cgiLed(HttpdConnData *connData) {
 	}
 
 	httpdRedirect(connData, "led.tpl");
+	write_params();
+
 	return HTTPD_CGI_DONE;
 }
 

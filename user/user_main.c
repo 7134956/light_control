@@ -26,6 +26,12 @@
 #include "auth.h"
 #include "user_pwm.h"
 
+#include "save_params.h"
+
+
+extern int currLedState;
+
+
 //Function that tells the authentication system what users/passwords live on the system.
 //This is disabled in the default build; if you want to try it, enable the authBasic line in
 //the builtInUrls below.
@@ -87,7 +93,8 @@ void user_init(void) {
 	os_printf("\nReady\n");
 
 	pwms_init();
-	platform_pwm_setup( 4, 500, 10 );
+	read_params();
+	platform_pwm_setup( 4, 500, currLedState );
 	//platform_pwm_setup( 6, 200, 1 );
 	//platform_pwm_setup( 7, 200, 100 );
 	platform_pwm_start( 4 );
