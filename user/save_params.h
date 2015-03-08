@@ -5,4 +5,4 @@
 
 void write_params(void);
 void read_params(void);
-
+void write_to_flash(void);
