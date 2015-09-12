@@ -27,20 +27,20 @@ int platform_gpio_mode( unsigned pin, unsigned mode, unsigned pull )
 
   switch(pull){
     case PLATFORM_GPIO_PULLUP:
-      PIN_PULLDWN_DIS(pin_mux[pin]);
+//      PIN_PULLDWN_DIS(pin_mux[pin]);
       PIN_PULLUP_EN(pin_mux[pin]);
       break;
     case PLATFORM_GPIO_PULLDOWN:
       PIN_PULLUP_DIS(pin_mux[pin]);
-      PIN_PULLDWN_EN(pin_mux[pin]);
+//      PIN_PULLDWN_EN(pin_mux[pin]);
       break;
     case PLATFORM_GPIO_FLOAT:
       PIN_PULLUP_DIS(pin_mux[pin]);
-      PIN_PULLDWN_DIS(pin_mux[pin]);
+//      PIN_PULLDWN_DIS(pin_mux[pin]);
       break;
     default:
       PIN_PULLUP_DIS(pin_mux[pin]);
-      PIN_PULLDWN_DIS(pin_mux[pin]);
+//      PIN_PULLDWN_DIS(pin_mux[pin]);
       break;
   }
 
